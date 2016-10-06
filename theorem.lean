@@ -162,14 +162,12 @@ definition mbs_of_finite_tree := minimal_bad_seq size H
 theorem bad_mbs_finite_tree : ¬ is_good mbs_of_finite_tree embeds := badness_of_mbs size H
 
 theorem ne_node_of_elt_of_mbs_finite_tree (n : ℕ) : mbs_of_finite_tree n ≠ node :=
-by_contradiction
-(suppose ¬ mbs_of_finite_tree n ≠ node,
- have mbs_of_finite_tree n = node, from not_not_elim this,
+ suppose mbs_of_finite_tree n = node,
  have node ≼ mbs_of_finite_tree (succ n), from node_embeds (mbs_of_finite_tree (succ n)),
  have Hr : mbs_of_finite_tree n ≼ mbs_of_finite_tree (succ n), by+ simp,
  have n < succ n, from lt_succ_self n,
  have is_good mbs_of_finite_tree embeds, from exists.intro n (exists.intro (succ n) (and.intro this Hr)),
- bad_mbs_finite_tree this)
+ bad_mbs_finite_tree this
 
 theorem minimality_of_mbs_finite_tree0 (f : ℕ → finite_tree) (Hf : ¬ is_good f embeds) : size (mbs_of_finite_tree 0) ≤ size (f 0) := minimality_of_mbs_0 size H f Hf
 
