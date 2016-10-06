@@ -1,0 +1,49 @@
+rule CLEAN
+  command =  "c:\Lean\lean-0.2.0-windows\bin\ninja.exe" -t clean
+  description = Cleaning all built files...
+rule LEAN
+  depfile = ${DLEAN_FILE}
+  command = "c:\Lean\lean-0.2.0-windows\bin\lean.exe" --flycheck -c \Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\theorem.clean -Dpp.width=80 $in -o "${OLEAN_FILE}" -c "${CLEAN_FILE}" -i "${ILEAN_FILE}" 
+rule LEANTAGS
+  command =  python  "c:\Lean\lean-0.2.0-windows\bin\leantags" --relative -- $in 
+build all: phony  \Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\theorem.olean  \Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.olean  \Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.olean  \Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\flycheck_theorem.olean  \Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas2.olean  \Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas1.olean 
+build tags: phony TAGS
+build TAGS: LEANTAGS  \Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\theorem.ilean  \Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.ilean  \Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.ilean  \Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\flycheck_theorem.ilean  \Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas2.ilean  \Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas1.ilean 
+build clean: CLEAN
+build \Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\theorem.olean \Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\theorem.ilean \Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\theorem.clean: LEAN \Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\theorem.lean | \Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\theorem.d \Lean\lean-0.2.0-windows\bin\lean.exe
+  DLEAN_FILE=\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\theorem.d
+  OLEAN_FILE=\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\theorem.olean
+  CLEAN_FILE=\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\theorem.clean
+  ILEAN_FILE=\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\theorem.ilean
+
+build \Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.olean \Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.ilean \Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.clean: LEAN \Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean | \Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.d \Lean\lean-0.2.0-windows\bin\lean.exe
+  DLEAN_FILE=\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.d
+  OLEAN_FILE=\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.olean
+  CLEAN_FILE=\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.clean
+  ILEAN_FILE=\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.ilean
+
+build \Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.olean \Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.ilean \Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.clean: LEAN \Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean | \Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.d \Lean\lean-0.2.0-windows\bin\lean.exe
+  DLEAN_FILE=\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.d
+  OLEAN_FILE=\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.olean
+  CLEAN_FILE=\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.clean
+  ILEAN_FILE=\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.ilean
+
+build \Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\flycheck_theorem.olean \Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\flycheck_theorem.ilean: LEAN \Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\flycheck_theorem.lean | \Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\flycheck_theorem.d \Lean\lean-0.2.0-windows\bin\lean.exe
+  DLEAN_FILE=\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\flycheck_theorem.d
+  OLEAN_FILE=\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\flycheck_theorem.olean
+  CLEAN_FILE=\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\theorem.clean
+  ILEAN_FILE=\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\flycheck_theorem.ilean
+
+build \Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas2.olean \Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas2.ilean \Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas2.clean: LEAN \Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas2.lean | \Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas2.d \Lean\lean-0.2.0-windows\bin\lean.exe
+  DLEAN_FILE=\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas2.d
+  OLEAN_FILE=\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas2.olean
+  CLEAN_FILE=\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas2.clean
+  ILEAN_FILE=\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas2.ilean
+
+build \Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas1.olean \Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas1.ilean \Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas1.clean: LEAN \Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas1.lean | \Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas1.d \Lean\lean-0.2.0-windows\bin\lean.exe
+  DLEAN_FILE=\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas1.d
+  OLEAN_FILE=\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas1.olean
+  CLEAN_FILE=\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas1.clean
+  ILEAN_FILE=\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas1.ilean
+
+default all

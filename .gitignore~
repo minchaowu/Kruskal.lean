@@ -45,16 +45,3 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
-
-# Lean project
-.olean
-.ninja_deps
-.ninja_log
-.project
-.ninja
-.lock
-.olean
-.ilean
-.d
-.clean
-.lean~

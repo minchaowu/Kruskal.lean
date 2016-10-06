@@ -1,0 +1,92 @@
+d|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|35|8|minimality|theorem|Π {S : set ℕ} {a : ℕ} {H0 : ne S ∅}, eq a (chooseleast S H0) → bounded_forall S (λ (x : _), le a x)
+d|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|108|8|ne_empty_of_mem'|theorem|Π {X : Type} {s : set X} {x : X}, mem x s → ne s ∅
+d|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|98|6|finite_singleton|lemma|Π {A : Type} {a : A}, finite (insert a ∅)
+d|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|29|8|least_is_mem|theorem|Π (S : set ℕ) (H : ne S ∅), mem (chooseleast S H) S
+d|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|25|25|chooseleast|noncomputable|Π (S : set ℕ), ne S ∅ → ℕ
+d|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|104|6|sub_of_eq|lemma|Π {A : Type} {S T : set A}, eq S T → subset S T
+d|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|81|6|union_of_diff_singleton|lemma|Π {A : Type} {S : set A} {a : A}, mem a S → eq (union (diff S (insert a ∅)) (insert a ∅)) S
+d|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|7|6|alt_of_wf|lemma|Π {A : set ℕ} (n : _), mem n A → bounded_exists A (λ (a : _), bounded_forall A (λ (b : _), le a b))
+d|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|47|6|nonzero_card_of_finite|lemma|Π {A : Type} {S : set A}, ne (card S) [prenum] → finite S
+d|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|60|6|insert_of_diff_singleton|lemma|Π {A : Type} {S : set A} {a : A}, mem a S → eq (insert a (diff S (insert a ∅))) S
+d|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|20|8|wf_of_le|theorem|Π (S : set ℕ), ne S ∅ → bounded_exists S (λ (a : _), bounded_forall S (λ (b : _), le a b))
+d|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|53|6|mem_not_in_diff|lemma|∀ {A : Type} {S : set A} {a : A}, ¬mem a (diff S (insert a ∅))
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|7|21|set
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|9|0|nat.strong_induction_on
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|11|0|classical.by_cases
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|14|6|and.right
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|14|21|and.left
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|16|37|set.not_bounded_exists
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|17|42|le_of_not_gt
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|18|0|exists.intro
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|18|16|and.intro
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|20|22|set
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|21|22|set.exists_mem_of_ne_empty
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|23|0|alt_of_wf
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|25|42|set
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|26|37|wf_of_le
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|27|0|classical.some
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|29|26|set
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|29|47|chooseleast
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|30|42|wf_of_le
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|31|11|classical.some
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|31|35|and.left
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|31|45|classical.some_spec
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|32|5|chooseleast
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|32|23|classical.some
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|32|37|rfl
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|35|24|set
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|35|61|chooseleast
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|38|42|wf_of_le
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|39|5|chooseleast
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|39|24|classical.some
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|39|38|rfl
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|40|14|classical.some
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|41|15|classical.some
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|41|39|and.right
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|41|50|classical.some_spec
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|42|5|classical.some
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|47|45|set
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|47|57|set.card
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|47|71|set.finite
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|48|0|classical.by_contradiction
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|49|11|set.finite
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|50|5|set.card
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|50|22|set.card_of_not_finite
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|53|38|set
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|54|0|classical.by_contradiction
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|56|24|not_not_elim
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|57|20|set.not_mem_of_mem_diff
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|58|6|set.mem_singleton
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|60|47|set
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|60|76|set.insert
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|61|0|set.ext
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|62|9|iff.intro
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|64|3|or.elim
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|66|10|and.left
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|68|3|classical.by_cases
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|69|19|or.intro_left
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|71|24|classical.by_contradiction
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|73|26|not_not_elim
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|74|23|set.eq_of_mem_singleton
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|76|28|and.intro
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|77|4|or.intro_right
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|81|46|set
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|82|0|set.ext
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|83|9|iff.intro
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|85|2|or.elim
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|86|14|and.left
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|88|21|and.left
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|88|31|set.mem_singleton_iff
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|91|2|classical.by_cases
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|92|21|or.intro_right
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|94|27|and.intro
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|95|3|or.intro_left
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|98|44|set.finite
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|99|13|set.card
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|99|33|set.card_singleton
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|101|5|set.card
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|102|0|nonzero_card_of_finite
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|104|33|set
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|105|17|set.subset.refl
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|108|41|set
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\lemmas_from_ramsey.lean|109|39|set.not_mem_empty

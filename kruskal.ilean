@@ -1,0 +1,219 @@
+d|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|83|12|finite_tree.not_cons_embeds_node|proposition|∀ {n : ℕ} (ts : fin n → finite_tree), ¬finite_tree.embeds (finite_tree.cons ts) finite_tree.node
+d|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|48|8|finite_tree.le_of_elt_Suml|theorem|∀ {n : ℕ} (ts : fin n → finite_tree) (k : fin n), finite_tree.size (ts k) ≤ ∑ (i : fin n)←upto n, finite_tree.size (ts i)
+d|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|33|8|finite_tree.pos_of_size|theorem|∀ (t : finite_tree), 0 < finite_tree.size t
+d|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|10|11|finite_tree.size|definition|finite_tree → ℕ
+d|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|101|12|finite_tree.cons_embeds_cons_dest|proposition|∀ {m n : ℕ} {ss : fin m → finite_tree} {ts : fin n → finite_tree}, finite_tree.embeds (finite_tree.cons ss) (finite_tree.cons ts) → (∃ (j : fin n), finite_tree.embeds (finite_tree.cons ss) (ts j)) ∨ ∃ (f : fin m → fin n), injective f ∧ ∀ (i : fin m), finite_tree.embeds (ss i) (ts (f i))
+d|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|4|10|finite_tree.rec_on|definition|Π {C : finite_tree → Type} (n : finite_tree), C finite_tree.node → (Π {n : ℕ} (a : fin n → finite_tree), (Π (a_1 : fin n), C (a a_1)) → C (finite_tree.cons a)) → C n
+d|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|25|6|finite_tree.upto_ne_nil_of_ne_zero|lemma|∀ (n : ℕ), n ≠ 0 → upto n ≠ nil
+d|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|17|6|finite_tree.map_val_upto|lemma|∀ (n : ℕ), map val (upto n) = upto n
+d|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|4|10|finite_tree.induction_on|definition|∀ {C : finite_tree → Prop} (n : finite_tree), C finite_tree.node → (∀ {n : ℕ} (a : fin n → finite_tree), (∀ (a_1 : fin n), C (a a_1)) → C (finite_tree.cons a)) → C n
+d|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|5|2|finite_tree.node|intro|finite_tree
+d|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|91|12|finite_tree.cons_embeds_cons_left|proposition|∀ {m n : ℕ} {ss : fin m → finite_tree} {ts : fin n → finite_tree} {j : fin n}, finite_tree.embeds (finite_tree.cons ss) (ts j) → finite_tree.embeds (finite_tree.cons ss) (finite_tree.cons ts)
+d|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|37|8|finite_tree.pos_of_Suml|theorem|∀ {n : ℕ}, n ≠ 0 → (∀ (ts : fin n → finite_tree), 0 < ∑ (i : fin n)←upto n, finite_tree.size (ts i))
+d|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|4|10|finite_tree|inductive|Type₁
+d|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|140|12|finite_tree.cons_embeds_iff|proposition|∀ {m : ℕ} (ss : fin m → finite_tree) (t : finite_tree), finite_tree.embeds (finite_tree.cons ss) t ↔ ∃ (n : ℕ) (ts : fin n → finite_tree), t = finite_tree.cons ts ∧ ((∃ (j : fin n), finite_tree.embeds (finite_tree.cons ss) (ts j)) ∨ ∃ (f : fin m → fin n), injective f ∧ ∀ (i : fin m), finite_tree.embeds (ss i) (ts (f i)))
+d|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|61|11|finite_tree.embeds|definition|finite_tree → finite_tree → Prop
+d|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|80|12|finite_tree.node_embeds|proposition|∀ (t : finite_tree), finite_tree.embeds finite_tree.node t
+d|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|106|12|finite_tree.embeds_refl|proposition|∀ (t : finite_tree), finite_tree.embeds t t
+d|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|20|6|finite_tree.length_upto|lemma|∀ (n : ℕ), length (upto n) = n
+d|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|4|10|finite_tree.rec|recursor|Π {C : finite_tree → Type}, C finite_tree.node → (Π {n : ℕ} (a : fin n → finite_tree), (Π (a_1 : fin n), C (a a_1)) → C (finite_tree.cons a)) → (Π (n : finite_tree), C n)
+d|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|14|8|finite_tree.exists_eq_cons_of_ne_nil|theorem|∀ {A : Type} {l : list A}, l ≠ nil → (∃ (a : A) (l' : list A), l = a :: l')
+d|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|4|10|finite_tree.cases_on|definition|Π {C : finite_tree → Type} (n : finite_tree), C finite_tree.node → (Π {n : ℕ} (a : fin n → finite_tree), C (finite_tree.cons a)) → C n
+d|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|137|12|finite_tree.embeds_trans|proposition|∀ {s t u : finite_tree}, finite_tree.embeds s t → finite_tree.embeds t u → finite_tree.embeds s u
+d|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|6|2|finite_tree.cons|intro|Π {n : ℕ}, (fin n → finite_tree) → finite_tree
+d|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|96|12|finite_tree.cons_embeds_cons_right|proposition|∀ {m n : ℕ} {ss : fin m → finite_tree} {ts : fin n → finite_tree} {f : fin m → fin n}, injective f → (∀ (i : fin m), finite_tree.embeds (ss i) (ts (f i))) → finite_tree.embeds (finite_tree.cons ss) (finite_tree.cons ts)
+d|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|87|12|finite_tree.cons_embeds_cons_iff|proposition|∀ {m n : ℕ} (ss : fin m → finite_tree) (ts : fin n → finite_tree), finite_tree.embeds (finite_tree.cons ss) (finite_tree.cons ts) ↔ (∃ (j : fin n), finite_tree.embeds (finite_tree.cons ss) (ts j)) ∨ ∃ (f : fin m → fin n), injective f ∧ ∀ (i : fin m), finite_tree.embeds (ss i) (ts (f i))
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|6|22|fin
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|10|18|finite_tree
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|11|2|finite_tree.node
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|12|4|finite_tree.cons
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|12|18|Suml
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|14|49|list
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|14|92|list.rec_on
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|14|112|absurd
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|14|119|rfl
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|15|23|exists.intro
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|15|39|exists.intro
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|15|55|rfl
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|17|24|nat
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|17|31|list.map
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|17|35|fin.val
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|17|54|list.upto
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|18|0|list.map_dmap_of_inv_of_pos
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|18|24|fin.val_mk
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|18|36|list.lt_of_mem_upto
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|20|23|nat
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|20|30|list.length
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|22|2|list.length
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|22|20|list.length
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|22|28|list.upto
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|22|44|finite_tree.map_val_upto
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|22|61|list.length_map
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|22|72|fin.val
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|23|31|list.length_upto
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|25|34|nat
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|29|14|list.length_nil
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|29|26|fin
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|30|8|eq.symm
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|30|17|finite_tree.length_upto
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|33|25|finite_tree
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|33|44|finite_tree.size
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|34|0|finite_tree.induction_on
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|37|46|fin
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|37|54|finite_tree
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|37|73|Suml
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|37|93|finite_tree.size
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|38|14|list.nil
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|38|24|finite_tree.upto_ne_nil_of_ne_zero
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|39|16|fin.upto
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|39|41|finite_tree.exists_eq_cons_of_ne_nil
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|42|14|finite_tree.size
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|43|5|Suml
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|43|28|Suml
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|43|44|Suml_cons
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|44|19|finite_tree.pos_of_size
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|45|11|Suml
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|45|31|nat.add_pos_left
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|45|50|Suml
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|48|37|fin
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|48|45|finite_tree
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|48|63|fin
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|48|72|finite_tree.size
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|48|86|Suml
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|48|106|finite_tree.size
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|49|22|fin.mem_upto
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|50|38|list.mem_split
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|52|5|Suml
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|52|25|finite_tree.size
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|52|40|Suml
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|52|65|finite_tree.size
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|53|5|Suml
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|53|30|finite_tree.size
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|53|45|Suml
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|53|58|finite_tree.size
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|53|73|Suml
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|53|91|finite_tree.size
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|53|110|Suml_append
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|53|137|finite_tree.size
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|54|5|Suml
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|54|23|finite_tree.size
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|54|38|finite_tree.size
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|54|52|Suml
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|54|65|finite_tree.size
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|54|84|Suml_cons
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|54|100|finite_tree.size
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|55|5|finite_tree.size
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|55|19|finite_tree.size
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|55|33|Suml
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|55|46|finite_tree.size
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|55|65|nat.le_add_right
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|55|79|finite_tree.size
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|55|93|Suml
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|55|106|finite_tree.size
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|56|11|finite_tree.size
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|56|25|Suml
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|56|43|finite_tree.size
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|57|5|Suml
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|57|23|finite_tree.size
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|57|38|Suml
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|57|51|finite_tree.size
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|57|66|Suml
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|57|84|finite_tree.size
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|57|103|nat.le_add_left
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|57|116|Suml
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|57|134|finite_tree.size
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|57|149|Suml
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|57|162|finite_tree.size
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|58|5|finite_tree.size
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|58|19|Suml
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|58|32|finite_tree.size
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|58|47|Suml
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|58|65|finite_tree.size
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|58|84|le.trans
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|61|20|finite_tree
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|61|34|finite_tree
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|62|9|finite_tree.node
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|62|32|true
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|63|10|finite_tree.cons
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|63|19|finite_tree.node
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|63|32|false
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|64|10|finite_tree.cons
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|64|20|finite_tree.cons
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|64|46|finite_tree.cons
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|65|40|function.injective
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|78|18|finite_tree.embeds
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|80|29|finite_tree
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|80|44|finite_tree.node
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|81|30|trivial
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|83|47|fin
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|83|55|finite_tree
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|83|72|finite_tree.cons
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|83|82|finite_tree.node
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|84|0|not_false
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|87|49|fin
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|87|57|finite_tree
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|87|76|fin
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|87|84|finite_tree
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|88|2|finite_tree.cons
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|88|12|finite_tree.cons
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|88|28|finite_tree.cons
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|88|52|function.injective
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|89|1|iff.refl
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|91|50|fin
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|91|58|finite_tree
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|91|77|fin
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|91|85|finite_tree
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|92|9|fin
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|92|21|finite_tree.cons
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|93|2|finite_tree.cons
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|93|12|finite_tree.cons
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|94|0|or.inl
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|94|8|exists.intro
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|96|51|fin
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|96|59|finite_tree
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|96|78|fin
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|96|86|finite_tree
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|97|9|fin
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|97|17|fin
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|97|32|function.injective
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|98|2|finite_tree.cons
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|98|12|finite_tree.cons
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|99|0|or.inr
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|99|8|exists.intro
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|99|24|and.intro
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|101|50|fin
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|101|58|finite_tree
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|101|77|fin
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|101|85|finite_tree
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|102|9|finite_tree.cons
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|102|19|finite_tree.cons
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|103|8|finite_tree.cons
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|103|32|function.injective
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|106|29|finite_tree
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|107|0|finite_tree.induction_on
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|107|27|trivial
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|108|17|finite_tree.cons_embeds_cons_right
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|108|40|function.injective_id
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|115|20|finite_tree.node_embeds
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|119|20|finite_tree.node_embeds
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|122|19|finite_tree.cons_embeds_cons_dest
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|124|9|finite_tree.cons
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|125|10|finite_tree.cons_embeds_cons_left
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|127|19|finite_tree.cons_embeds_cons_dest
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|129|9|finite_tree.cons
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|130|10|finite_tree.cons_embeds_cons_left
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|132|8|finite_tree.cons_embeds_cons_right
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|133|8|function.injective_compose
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|137|34|finite_tree
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|138|0|private.154376907.embeds_trans_aux
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|140|42|fin
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|140|50|finite_tree
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|140|68|finite_tree
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|141|2|finite_tree.cons
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|141|26|fin
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|141|34|finite_tree
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|141|52|finite_tree.cons
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|142|25|finite_tree.cons
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|142|49|function.injective
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|144|8|iff.intro
+r|\Users\minch\OneDrive\Documents\GitHub\Kruskal.lean\kruskal.lean|147|53|finite_tree.cons_embeds_cons_dest
