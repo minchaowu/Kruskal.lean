@@ -57,13 +57,11 @@ definition set_of_branches {n : ℕ} (ts : fin n → finite_tree) : set (finite_
 theorem empty_branches (ts : fin 0 → finite_tree) : set_of_branches ts = ∅ :=
 have ∀ x, x ∉ set_of_branches ts, from 
   take x, 
-  by_contradiction 
-  (suppose ¬ x ∉ set_of_branches ts,
-   have x ∈ set_of_branches ts, from dne this,
-   obtain a ha, from this,
-   have le : val a < 0, from is_lt a,
-   have ¬ val a < 0, from dec_trivial,
-   this le),
+  suppose x ∈ set_of_branches ts,
+  obtain a ha, from this,
+  have le : val a < 0, from is_lt a,
+  have ¬ val a < 0, from dec_trivial,
+  this le,
 eq_empty_of_forall_not_mem this
 
 definition set_of_branches_at_root : finite_tree → set (finite_tree × ℕ) 
@@ -275,7 +273,7 @@ theorem good_finite_subsets_of_mbs_tree : ∀ f, is_good f os := wqo.is_good
 
 -- Intuitively, the above f' is already a witness of the goodness of mbs_of_finite_tree, as it maps each branch of mbs_of_finite_tree i to a branch of mbs_of_finite_tree j. (Also note that there is no node in the mbs_of_finite_tree.)
 
--- However, according to the definition of embeds, f' has to be of type fin n → fin m, representing a permutation on the labels of the branches. The following construction recovers the desired function from f'.
+-- However, according to the definition of embeds, f' has to be of type fin n → fin m for some n,m ∈ ℕ, representing a permutation on the labels of the branches. The following construction recovers the desired function from f'.
 
 -- branches at root of mbs_of_finite_tree form a set of mbs_tree
 definition elt_copy_of_seq_branches (n : ℕ) : set mbs_tree := {x : mbs_tree | elt_of x ∈ seq_branches_of_mbs_tree n}
