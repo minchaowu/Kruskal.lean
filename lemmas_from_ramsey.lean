@@ -28,7 +28,7 @@ some this
 
 theorem least_is_mem (S : set ℕ) (H : S ≠ ∅) : chooseleast S H ∈ S := 
 have H1 : ∃₀ a ∈ S, ∀₀ b ∈ S, a ≤ b, from wf_of_le S H,
-have inS : some H1 ∈ S, from sorry, --and.left (some_spec H1),
+have inS : some H1 ∈ S, from proof and.left (some_spec H1) qed,
 have chooseleast S H = some H1, from rfl,
 by+ rewrite -this at inS ; exact inS
 
@@ -38,7 +38,7 @@ take b, assume Hb,
 have H1 : ∃₀ n ∈ S, ∀₀ m ∈ S, n ≤ m, from wf_of_le S H0,
 have chooseleast S H0 = some H1, from rfl,
 have eq : a = some H1, by+ rewrite this at H;exact H,
-have ∀₀ m ∈ S, some H1 ≤ m, from sorry, --and.right (some_spec H1), 
+have ∀₀ m ∈ S, some H1 ≤ m, from proof and.right (some_spec H1) qed, 
 have some H1 ≤ b, from this Hb,
 by+ simp 
 
