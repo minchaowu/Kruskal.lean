@@ -51,11 +51,9 @@ have card S = 0, from card_of_not_finite this,
 H this)
 
 lemma mem_not_in_diff {A : Type} {S : set A} {a : A} : a ∉ S \ '{a} := 
-by_contradiction
-(suppose ¬ a ∉ S \ '{a},
-have a ∈ S \ '{a}, from not_not_elim this,
+suppose a ∈ S \ '{a},
 have a ∉ '{a}, from not_mem_of_mem_diff this,
-this (mem_singleton a))
+this (mem_singleton a)
 
 lemma insert_of_diff_singleton {A : Type} {S : set A} {a : A} (H : a ∈ S) : insert a (S \ '{a}) = S :=
 ext
