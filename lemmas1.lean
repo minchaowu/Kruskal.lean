@@ -3,8 +3,6 @@ open classical fin nat function prod subtype set
 
 noncomputable theory
 
---theorem dne {p : Prop} (H : ¬¬p) : p := or.elim (em p) (assume Hp : p, Hp) (assume Hnp : ¬p, absurd Hnp H)
-
 theorem lt_or_eq_of_lt_succ {n m : ℕ} (H : n < succ m) : n < m ∨ n = m := lt_or_eq_of_le (le_of_lt_succ H)
 
 theorem imp_of_not_and {p q : Prop} (H : ¬ (p ∧ q)) : p → ¬ q := 
@@ -118,10 +116,7 @@ exists.intro n this
 
 end
 
-
-
 section
--- for lemma 1
 
 parameters {A B : Type}
 parameter [wqo A]

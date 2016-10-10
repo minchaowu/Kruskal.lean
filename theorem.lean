@@ -3,7 +3,7 @@ open classical fin set nat subtype finite_tree kruskal function prod
 
 noncomputable theory
 
-theorem dne {p : Prop} (H : ¬¬p) : p := or.elim (em p) (assume Hp : p, Hp) (assume Hnp : ¬p, absurd Hnp H) -- why do we need [decidable p] in not_not_elim?
+theorem dne {p : Prop} (H : ¬¬p) : p := or.elim (em p) (assume Hp : p, Hp) (assume Hnp : ¬p, absurd Hnp H)
 
 lemma tag_eq_of_eq {A : Type} {P : A → Prop} {a b : subtype P} (H : a = b) : elt_of a = elt_of b := by rewrite H
 

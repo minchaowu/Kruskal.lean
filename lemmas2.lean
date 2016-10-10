@@ -707,7 +707,7 @@ check Higman's_contradiction
 variable {Q : Type}
 variable [wqo Q]
 
-theorem ofs_is_good : ∀ f : ℕ → finite_subsets Q , is_good f ofs := -- should use this. This one contains more information.
+theorem ofs_is_good : ∀ f : ℕ → finite_subsets Q , is_good f ofs := 
 by_contradiction
 (suppose ¬ ∀ f, is_good f ofs,
 have ∃ f, ¬ is_good f ofs, from exists_not_of_not_forall this,
