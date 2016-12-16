@@ -56,42 +56,24 @@ have a ∉ '{a}, from not_mem_of_mem_diff this,
 this (mem_singleton a)
 
 lemma insert_of_diff_singleton {A : Type} {S : set A} {a : A} (H : a ∈ S) : insert a (S \ '{a}) = S :=
-ext
-(take x, iff.intro
-  (assume H1, 
-   or.elim H1
-   (λ Hl, by+ simp)
-   (λ Hr, and.left Hr))
-  (assume H2,
-   by_cases
-   (suppose x = a, or.intro_left (x ∈ S \ '{a}) this)
-   (suppose neq : x ≠ a, 
-    have x ∉ '{a}, from by_contradiction 
-     (suppose ¬ x ∉ '{a}, 
-      have x ∈ '{a}, from not_not_elim this,
-      have x = a, from eq_of_mem_singleton this,
-      neq this),
-    have x ∈ S \ '{a}, from and.intro H2 this,
-    or.intro_right (x = a) this))
-)
-
+begin
+apply eq_of_subset_of_subset,
+  intros x h, apply or.elim h, intro, simp,
+  intro hr, apply and.left hr,
+  intro x h', cases (decidable.em (x ∈ '{a})),
+  apply or.inl, apply eq_of_mem_singleton, simp,
+  apply or.inr, apply and.intro, repeat simp
+end
 
 lemma union_of_diff_singleton {A : Type} {S : set A} {a : A} (H : a ∈ S) : S \ '{a} ∪ '{a} = S := 
-ext
-(take x, iff.intro
-(assume H1, 
-  or.elim H1
-  (assume Hl, and.left Hl)
-  (assume Hr, 
-   have x = a, from (and.left (mem_singleton_iff x a)) Hr,
-   show x ∈ S, by+ rewrite -this at H;exact H))
-(assume H2,
-  by_cases
-  (suppose x ∈ '{a}, or.intro_right (x ∈ S \ '{a}) this)
-  (suppose x ∉ '{a}, 
-   have x ∈ S \ '{a}, from and.intro H2 this,
-   or.intro_left (x ∈ '{a}) this))
-)
+begin
+apply eq_of_subset_of_subset,
+  intros x h, apply or.elim h, intro hl, apply and.left hl,
+  intro hr, have x = a, from (and.left (mem_singleton_iff x a)) hr,
+  rewrite this, simp,
+  intros x h', cases (decidable.em (x ∈ '{a})),
+  apply or.inr, simp, apply or.inl, apply and.intro, repeat simp
+end
 
 lemma finite_singleton {A : Type} {a : A} : finite '{a} := 
 have carda : card '{a} = 1, from card_singleton a,
